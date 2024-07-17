@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "http-server": "http-server -p 8080 -c-1 dist/angular-pwa/browser",
-    "fx-build": "npm run build && npm run http-server"
+    "fx-build": "npm run build:prod && npm run http-server"
   },
   "private": true,
   "dependencies": {
