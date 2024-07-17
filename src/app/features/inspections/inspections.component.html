@@ -1,0 +1,25 @@
+<p>Inpected Vehicles</p>
+
+<button [routerLink]="'/inspections/create'">Start New Inspection</button>
+<button [routerLink]="'/engineers'">Add Engineers</button>
+<button [routerLink]="'/vehicles'">Vehicles List</button>
+
+@if(inspections$ | async; as inspections;){
+  @if(inspections.length > 0){
+    @for(inspection of inspections; track inspection;) {
+      <div class="card">
+        <p><strong>Company Name:</strong> {{inspection.companyName}}</p>
+        <p><strong>Vehicle Number:</strong> {{inspection.vehicleNumber}}</p>
+        <p><strong>Inspector:</strong> {{inspection.engineer}}</p>
+        <p><strong>Fuel Type:</strong> {{inspection.fuelType}}</p>
+        <p><strong>Inspection Date:</strong> {{inspection.inspectionDate | date}}</p>
+        <p><strong>Result:</strong> {{inspection.result}}</p>
+        <button data-action="delete" (click)="onDelete(inspection)">Delete</button>
+        <button data-action="edit" (click)="onEdit(inspection.id)">Edit</button>
+        <span *ngIf="inspection.isSynced == 0" class="unsynced-flag">Unsynced</span>
+      </div>
+    }
+  }@else {
+    <h1>No history of inspections</h1>
+  }
+}

@@ -1,0 +1,73 @@
+.engineer-form {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group input.invalid {
+  border-color: red;
+}
+
+.form-group div {
+  color: red;
+  font-size: 14px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.engineer-list {
+  margin-top: 20px;
+}
+
+.engineer-list h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.engineer-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.engineer-list ul li {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,58 @@
+.vehicle-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.vehicle-card {
+  width: 300px;
+  background-color: #f7e5e5;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.info-item {
+  flex: 1 1 50%; /* Two items per row */
+}
+
+.info-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.info-item p strong {
+  font-weight: bold;
+  color: #333;
+}

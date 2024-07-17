@@ -1,0 +1,22 @@
+<header class="header">
+  <div class="logo">
+    <h1 [routerLink]="'/'">MOUFA GSE APP</h1>
+  </div>
+  @if(unsyncedInspections.length > 0){
+  <div>
+    <p>You have {{ unsyncedInspections.length }} unsynced inspections</p>
+  </div>
+  <div>
+    <button [disabled]="!isOnline" class="status" (click)="onSync()">Sync</button>
+    <span *ngIf="isSyncing">SYNCING.....</span>
+  </div>
+  }
+  <div class="status">
+    <span
+      class="status-text"
+      [ngClass]="{ online: isOnline, offline: !isOnline }"
+    >
+      {{ isOnline ? "Online" : "Offline" }}
+    </span>
+  </div>
+</header>

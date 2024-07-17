@@ -1,0 +1,21 @@
+@if(vehicles$ | async; as vehicles) {
+  <div class="vehicle-container">
+    @for(vehicle of vehicles; track vehicle) {
+      <div class="vehicle-card">
+        <div class="card-header">
+          <h3>{{ vehicle.companyName }}</h3>
+        </div>
+        <div class="card-body">
+          <p><strong>Vehicle Type:</strong> {{ vehicle.type }}</p>
+          <p><strong>Manufacturer:</strong> {{ vehicle.manufacturer }}</p>
+          <p><strong>Plate Number:</strong> {{ vehicle.plateNumber }}</p>
+          <p><strong>Vehicle GSE Number:</strong> {{ vehicle.vehicleGSE }}</p>
+          <p><strong>Last Inspection Result:</strong> {{ vehicle.lastInspectionResult }}</p>
+        </div>
+        <div class="card-footer">
+          <p><strong>Last Inspection Date:</strong> {{ vehicle.lastInspectionDate | date:'mediumDate' }}</p>
+        </div>
+      </div>
+    }
+  </div>
+}

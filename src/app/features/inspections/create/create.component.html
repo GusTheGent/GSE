@@ -1,0 +1,93 @@
+<!-- create.component.html -->
+<form [formGroup]="inspectionForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="companyName">Company Name</label>
+    <ng-select
+    [items]="companies"
+    formControlName="companyName"
+    bindLabel="companyName"
+    bindValue="companyId"
+    ></ng-select>
+    <div *ngIf="inspectionForm.get('companyName')?.invalid && inspectionForm.get('companyName')?.touched">
+      Company Name is required
+    </div>
+  </div>
+
+  <div>
+    <label for="companyNumber">Company Number</label>
+    <input id="companyNumber" formControlName="companyNumber" type="text">
+    <div *ngIf="inspectionForm.get('companyNumber')?.invalid && inspectionForm.get('companyNumber')?.touched">
+      Company Number is required
+    </div>
+  </div>
+
+  <div>
+    <label for="vehicleNumber">Vehicle Number</label>
+    <select formControlName="vehicleNumber" id="vehicleNumber">
+      <option *ngFor="let vehicle of vehicles" [value]="vehicle.vehicleGSE">{{ vehicle.vehicleGSE }}</option>
+    </select>
+    <div *ngIf="inspectionForm.get('vehicleNumber')?.invalid && inspectionForm.get('vehicleNumber')?.touched">
+      Vehicle Number is required
+    </div>
+  </div>
+
+  <div>
+    <label for="inspectionDate">Inspection Date</label>
+    <input id="inspectionDate" formControlName="inspectionDate" type="date">
+    <div *ngIf="inspectionForm.get('inspectionDate')?.invalid && inspectionForm.get('inspectionDate')?.touched">
+      Inspection Date is required
+    </div>
+  </div>
+
+  <div>
+    <label for="fuelType">Fuel Type</label>
+    <select id="fuelType" formControlName="fuelType">
+      <option value="" disabled>Select fuel type</option>
+      <option value="Petrol">Petrol</option>
+      <option value="Diesel">Diesel</option>
+      <option value="Electric">Electric</option>
+      <option value="Hybrid">Hybrid</option>
+    </select>
+    <div *ngIf="inspectionForm.get('fuelType')?.invalid && inspectionForm.get('fuelType')?.touched">
+      Fuel Type is required
+    </div>
+  </div>
+
+  <div>
+    <label for="result">Result</label>
+    <select id="result" formControlName="result">
+      <option value="" disabled>Select result</option>
+      <option value="Pass">Pass</option>
+      <option value="Fail">Fail</option>
+      <option value="Pending">Pending</option>
+    </select>
+    <div *ngIf="inspectionForm.get('result')?.invalid && inspectionForm.get('result')?.touched">
+      Result is required
+    </div>
+  </div>
+
+  <div>
+    <label for="engineer">Engineer</label>
+    <ng-select
+    [items]="engineers"
+    formControlName="engineer"
+    bindLabel="name"
+    bindValue="name"
+    ></ng-select>
+    <div *ngIf="inspectionForm.get('engineer')?.invalid && inspectionForm.get('engineer')?.touched">
+      Engineer is required
+    </div>
+  </div>
+
+  <div>
+    <label for="approved">Approved</label>
+    <input id="approved" formControlName="approved" type="checkbox">
+    <div *ngIf="inspectionForm.get('approved')?.invalid && inspectionForm.get('approved')?.touched">
+      Approval is required
+    </div>
+  </div>
+
+
+  <button type="submit" [disabled]="inspectionForm.invalid">Submit</button>
+</form>
+

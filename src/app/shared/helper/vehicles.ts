@@ -1,0 +1,55 @@
+import { Vehicle } from "../interfaces/Vehicle";
+
+export const vehicles: Vehicle[] = [
+  {
+      id: 1,
+      colourOfSticker: 'Red',
+      companyId: 1,
+      companyNumber: 'C001',
+      companyName: 'Company A',
+      vehicleGSE: 'GSE-001',
+      manufacturer: 'Toyota',
+      carRegistrationLicense: 'ABC123',
+      plateNumber: 'XYZ-789',
+      tires: 'Michelin',
+      type: 'Sedan',
+      category: 'Compact',
+      barcode: 'BAR-001',
+      lastInspectionDate: new Date('2023-06-15'),
+      lastInspectionResult: 'Pass'
+  },
+  {
+      id: 2,
+      colourOfSticker: 'Blue',
+      companyId: 2,
+      companyNumber: 'C002',
+      companyName: 'Company B',
+      vehicleGSE: 'GSE-002',
+      manufacturer: 'Honda',
+      carRegistrationLicense: 'DEF456',
+      plateNumber: 'LMN-456',
+      tires: 'Bridgestone',
+      type: 'SUV',
+      category: 'Mid-size',
+      barcode: 'BAR-002',
+      lastInspectionDate: new Date('2023-05-20'),
+      lastInspectionResult: 'Fail'
+  },
+  {
+      id: 3,
+      colourOfSticker: 'Green',
+      companyId: 1,
+      companyNumber: 'C001',
+      companyName: 'Company A',
+      vehicleGSE: 'GSE-003',
+      manufacturer: 'Ford',
+      carRegistrationLicense: 'GHI789',
+      plateNumber: 'OPQ-789',
+      tires: 'Goodyear',
+      type: 'Truck',
+      category: 'Heavy-duty',
+      barcode: 'BAR-003',
+      lastInspectionDate: new Date('2023-04-10'),
+      lastInspectionResult: 'Pass'
+  },
+];

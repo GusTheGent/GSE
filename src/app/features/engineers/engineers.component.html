@@ -1,0 +1,19 @@
+<form [formGroup]="engineerRegistry" class="engineer-form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Engineer Name</label>
+    <input id="name" formControlName="name" type="text">
+    <div *ngIf="engineerRegistry.get('name')?.invalid && engineerRegistry.get('name')?.touched">
+      Engineer name is required
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="engineerRegistry.invalid">Add Engineer</button>
+</form>
+
+<!-- List of Engineers -->
+<div class="engineer-list">
+  <h2>Registered Engineers</h2>
+  <ul>
+    <li *ngFor="let engineer of engineers">{{ engineer.name }}</li>
+  </ul>
+</div>
