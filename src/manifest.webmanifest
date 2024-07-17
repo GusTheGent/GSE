@@ -9,9 +9,9 @@
   "icons": [
     {
       "src": "assets/icons/gse.png",
-      "sizes": "72x72",
+      "sizes": "144x144",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     }
   ]
 }
